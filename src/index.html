@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Shrub</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=EB+Garamond&family=Poppins:wght@100;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&family=Amatic+SC&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <!-- Styling -->
+    <link rel= "stylesheet" href="style.css">
+
+    <!-- JavaScript -->
+    <script>
+        function expandText(boxId) {
+        var summary = document.getElementById(boxId).getElementsByClassName("summary")[0];
+        var fullText = document.getElementById(boxId).getElementsByClassName("full-text")[0];
+        var expandButton = document.getElementById(boxId).getElementsByClassName("expand-button")[0];
+        var mapContainer = document.getElementById("mapContainer");
+        var contactForm = document.getElementById("contactForm");
+
+        if (summary.style.display === "none") {
+            summary.style.display = "block";
+            fullText.style.display = "none";
+            expandButton.textContent = "Read More";
+            mapContainer.style.display = "none";
+            contactForm.style.display = "none";
+        } else {
+            summary.style.display = "none";
+            fullText.style.display = "block";
+            expandButton.textContent = "Read Less";
+            if (boxId === "contact") {
+                mapContainer.style.display = "block";
+                contactForm.style.display = "block";
+            }
+        }
+    }
+    </script>
+
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="header-logo">
+                <img src="../img/Lucky-Shrub-logos/img2.png" alt="Logo">
+                <h1 class="title">Lucky <span>Shrub</span>.</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="home">Home</li>
+                    <li class="about-us" id="#about-us"><a href="#about-us">About Us</a></li>
+                    <li class="services" id="#services"><a href="#services">Our Services</a></li>
+                    <li class="contact" id="#contact"><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Header end -->
+
+    <!-- Main section -->
+    <main>
+        <section class="main">
+            <article>
+                <h1>Special Discount Offer</h1>
+                <p>Transform Your Garden Today! Book our services now and receive a <span>20%</span> discount on all garden design projects. 
+                    This is your chance to enhance your surroundings and enjoy a stunning garden that reflects your personal style.</p>
+                <!-- <div class="main-logo">
+                    <img src="../img/background-img/bg.jpg" alt="main-logo">
+                </div> -->
+            </article>
+        </section>
+        <section class="sub">
+            <article class="expandable-box" id="about-us">
+                <h2>About Us</h2>
+                <p class="summary">Lucky Shrub is a medium-sized garden design firm based in Tuscon, Arizona. 
+                    We specialize in creating beautiful and functional gardens, offering services in garden design, maintenance, and landscaping.</p>
+                <p class="full-text">Founded by a husband and wife team, Jason and Maria, Lucky Shrub combines their shared passion for plants and expertise in creating stunning outdoor spaces. 
+                    Jason serves as the garden architect, overseeing all designs and managing our team of skilled landscapers. 
+                    Maria handles the marketing and management of our small plant nursery, where we offer a wide variety of indoor and outdoor plants.
+                    At Lucky Shrub, our mission is to transform any space into an oasis you can be proud of. 
+                    Whether you need a complete garden overhaul or regular maintenance, we are dedicated to delivering exceptional results that reflect your personal style and enhance your surroundings.</p>
+                <button class="expand-button" onclick="expandText('about-us')">Read More</button>
+            </article>
+            <article class="expandable-box" id="services">
+                <h2>Our Services</h2>
+                <p class="summary">We are operated in Tuscan, Arizona. 
+                    Our services range from professional garden design, maintenance, to landscaping. 
+                    There's also a discount and warranty, so check out for more information.</p>
+                <div class="service">
+                    <p class="full-text" style="display: none;">
+                        <span>Garden Design and Creation</span><br>
+                            Our professional team specializes in designing and creating beautiful and functional gardens, customized to your preferences.<br>
+                            <span>Landscaping</span><br>
+                            Enhance the aesthetics of your property with our meticulous landscaping services, including patio, walkway, and garden feature installation.<br>
+                            <span>Garden Maintenance</span><br>
+                            Leave the garden upkeep to us. Our expert team provides comprehensive maintenance services to keep your garden healthy and vibrant.
+                    </p>
+                    <button class="expand-button" onclick="expandText('services')">Read More</button>
+                    </div>
+            </article>
+            <article class="expandable-box" id="contact">
+                <h2>Contact us</h2>
+                <p class="summary">We are available for consultation on weekdays from 7am to 5pm. 
+                    You can contact us to schedule an appointment and discuss your garden needs. 
+                    You can also come check out our store. Click read more below.</p>               
+                <div class="full-text">
+                    <div class="map" id="mapContainer">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.144533510969!2d-122.08407368480038!3d37.42200333288687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcae8a2ff01ab%3A0xb04a2bc4de7e230b!2sGoogle%20Plex!5e0!3m2!1sen!2sca!4v1562241116272!5m2!1sen!2sca" width="250" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>   
+                    <div class="contact-form" id="contact-form">
+                        <h3>Consultation Request</h3>
+                        <form>
+                          <label for="name">Name :</label>
+                          <input type="text" id="name" name="name" required><br>
+                    
+                          <label for="email">Email :</label>
+                          <input type="email" id="email" name="email" required><br>
+                    
+                          <label for="phone">Phone :</label>
+                          <input type="tel" id="phone" name="phone" required><br>
+                    
+                          <label for="message">Message:</label><br>
+                          <textarea id="message" name="message" rows="4" required></textarea><br>
+                    
+                          <button type="submit">Submit</button>
+                        </form>
+                      </div>
+                </div>
+                <button class="expand-button" onclick="expandText('contact')">Read More</button>   
+            </article>
+        </section>
+    </main>
+    <!-- Main end -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+          <img src="../img/Lucky-Shrub-logos/img3.png" alt="logo-footer">
+        </div>
+        <div class="footer-text">
+          <span>2023</span> Lucky Shrub. All rights reserved.
+        </div>
+    </footer>      
+    
+    <!-- Footer end -->
+    
+</body>
+</html>
